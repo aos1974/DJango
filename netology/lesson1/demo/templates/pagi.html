@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Paginator</title>
+</head>
+<body>
+{% for i in page %}
+<p>{{ i }}</p>
+{% endfor %}
+
+{% if page.has_previous %}
+<a href="?page={{ page.previous_page_number }}">Prev</a>
+{% endif %}
+
+{% if page.has_next %}
+<a href="?page={{ page.next_page_number }}">Next</a>
+{% endif %}
+
+</body>
+</html>
