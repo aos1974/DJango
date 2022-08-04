@@ -77,8 +77,13 @@ WSGI_APPLICATION = 'lesson1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': '172.18.172.189',
+        'NAME': 'demoorm',
+        'USER': 'ormadmin',
+        'PASSWORD': 'oRm2022!!!'
     }
 }
 

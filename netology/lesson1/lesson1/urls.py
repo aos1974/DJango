@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, register_converter
 
 from demo.converters import DateConverters
-from demo.views import index, get_time, hello, sum, echo_date, pagi
+from demo.views import index, get_time, hello, sum, echo_date, pagi, create_car, list_car
+from demo.views import create_person, list_person
 
 register_converter(DateConverters, 'date')
 
@@ -29,4 +30,8 @@ urlpatterns = [
     path('sum/<a>/<b>/', sum),
     path('echo-date/<date:dt>/', echo_date),
     path('pagi/', pagi),
+    path('new_car/', create_car),
+    path('cars/', list_car),
+    path('new_person/', create_person),
+    path('persons/', list_person),
 ]
