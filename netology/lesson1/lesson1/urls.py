@@ -19,6 +19,7 @@ from django.urls import path, register_converter
 from demo.converters import DateConverters
 from demo.views import index, get_time, hello, sum, echo_date, pagi, create_car, list_car
 from demo.views import create_person, list_person
+from demo.views import list_orders
 
 register_converter(DateConverters, 'date')
 
@@ -34,4 +35,6 @@ urlpatterns = [
     path('cars/', list_car),
     path('new_person/', create_person),
     path('persons/', list_person),
+    # lesson Django.ORM2
+    path('orders/', list_orders),
 ]

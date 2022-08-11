@@ -4,7 +4,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
-from demo.models import Car, Person
+from demo.models import Car, Person, Order, Product, OrderPosition
 
 # Create your views here.
 
@@ -69,3 +69,16 @@ def list_person(request):
     p_obj = Person.objects.all()
     persons = [f'name: {p.name} car: {p.car.brand}-{p.car.model} {p.car.color}' for p in p_obj]
     return HttpResponse('<br>'.join(persons))
+
+##################################
+# Django.ORM 2
+##################################
+
+def list_orders(request):
+    template = 'orders.html'
+    #orders = Order.objects.all()
+    orders = Order.objects.filter(positions__product__price__gte=44),
+    context = {
+        'orders': orders,
+    } 
+    return render(request, template, context)

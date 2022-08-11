@@ -1,0 +1,17 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+    {% for order in orders %}
+        <p> ORDER: {{ order.id }} </p>
+        {% for pos in order.positions.all %}
+            <p>
+                Product: {{ pos.product.name }} QTT {{ pos.quantity }}
+            </p>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
