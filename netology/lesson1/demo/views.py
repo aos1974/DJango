@@ -76,8 +76,8 @@ def list_person(request):
 
 def list_orders(request):
     template = 'orders.html'
-    #orders = Order.objects.all()
-    orders = Order.objects.filter(positions__product__price__gte=44),
+    orders = Order.objects.all()
+    #orders = Order.objects.filter(positions__product__price__gte=44),
     context = {
         'orders': orders,
     } 

@@ -17,8 +17,8 @@ class Product(models.Model):
     category = models.CharField(max_length=50)
 
 class Order(models.Model):
-    #products = models.ManyToManyField(Product, related_name='orders')
-    pass
+    products = models.ManyToManyField(Product, related_name='orders', through='OrderPosition')
+    pass#
 
 class OrderPosition(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='positions')
